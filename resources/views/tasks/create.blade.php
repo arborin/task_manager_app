@@ -46,7 +46,7 @@
                                     <div class="input-group">
 
                                         <input class="form-control" id="date" name="date"
-                                            placeholder="DD-MM-YYYY" type="text" />
+                                            placeholder="YYYY-MM-DD" type="text" />
 
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="basic-addon1">

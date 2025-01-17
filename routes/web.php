@@ -23,3 +23,5 @@ Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::get('/my-tasks', [TaskController::class, 'index'])->name('my.tasks');
 Route::get('/create-task', [TaskController::class, 'create'])->name('create.task');
 Route::post('/store-task', [TaskController::class, 'store'])->name('store.task');
+Route::get('/edit-task/{task}', [TaskController::class, 'edit'])->name('edit.task');
+Route::patch('/update-task/{task}', [TaskController::class, 'update'])->name('update.task');

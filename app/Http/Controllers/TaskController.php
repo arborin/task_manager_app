@@ -14,7 +14,12 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('tasks.index');
+        $user_id = 1;
+
+        $tasks = Task::where('user_id', 1)->orderBy('id', 'desc')->paginate(20);
+        return view('tasks.index', [
+            'tasks' => $tasks
+        ]);
     }
 
     /**
@@ -38,10 +43,10 @@ class TaskController extends Controller
             'task_description' => $request->task_description,
             'status_id' => $request->status_id,
             'completion_date' => $request->date,
-            'user_id' => null
+            'user_id' => 1
         ]);
 
-        return redirect()->back()->with('success', 'Task Created!');
+        return redirect()->route('my.tasks')->with('success', 'Task Created!');
     }
 
     /**
@@ -55,17 +60,28 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Task $task)
     {
-        //
+        $statuses = TaskStatus::get();
+
+        return view('tasks.edit', [
+            'task' => $task,
+            'statuses' => $statuses,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TaskStoreRequest $request, Task $task)
     {
-        //
+        $task->task_description = $request->task_description;
+        $task->status_id = $request->status_id;
+        $task->completion_date = $request->date;
+
+        $task->update();
+
+        return redirect()->route('my.tasks')->with('success', 'Record updated!');
     }
 
     /**
