@@ -37,23 +37,23 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a href="index.html">
+                        <a href="/">
                             <i class="la la-dashboard"></i>
                             <p>Dashboard</p>
                             <span class="badge badge-count">5</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="components.html">
+                        <a href="/my-tasks">
                             <i class="la la-table"></i>
                             <p>My Tasks</p>
                             <span class="badge badge-count">14</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="forms.html">
+                        <a href="/deleted-tasks">
                             <i class="la la-keyboard-o"></i>
-                            <p>Trash</p>
+                            <p>Archive</p>
                             <span class="badge badge-count">50</span>
                         </a>
                     </li>

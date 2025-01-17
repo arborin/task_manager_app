@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard.index');
 });
+
+
+Route::get('/my-tasks', function () {
+    return view('tasks.index');
+});
+
+
+Route::get('/deleted-tasks', function () {
+    return view('tasks.index');
+});

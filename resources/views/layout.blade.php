@@ -35,7 +35,7 @@
 <script src="{{ asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugin/jquery-mapael/jquery.mapael.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script> --}}
 <script src="{{ asset('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 <script src="{{ asset('assets/js/ready.min.js') }}"></script>
