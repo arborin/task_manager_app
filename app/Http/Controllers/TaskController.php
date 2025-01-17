@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskStoreRequest;
+use App\Models\TaskStatus;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -19,15 +21,19 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('tasks.create');
+        $statuses = TaskStatus::get();
+
+        return view('tasks.create', [
+            'statuses' => $statuses
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TaskStoreRequest $request)
     {
-        //
+        dd($request);
     }
 
     /**

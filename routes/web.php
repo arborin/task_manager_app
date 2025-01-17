@@ -22,3 +22,4 @@ Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 // TASK ROUTES
 Route::get('/my-tasks', [TaskController::class, 'index'])->name('my.tasks');
 Route::get('/create-task', [TaskController::class, 'create'])->name('create.task');
+Route::post('/store-task', [TaskController::class, 'store'])->name('store.task');
