@@ -2,7 +2,7 @@
     <h4 class="page-title">My Tasks</h4>
     <div class="row mb-3">
         <div class="col-md-12">
-            <button class="btn btn-primary">Create</button>
+            <a href="{{ route('create.task') }}" class="btn btn-primary">Create</a>
         </div>
     </div>
     <div class="row">

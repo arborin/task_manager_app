@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,16 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-});
 
+// DASHBOARD
+Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/my-tasks', function () {
-    return view('tasks.index');
-});
-
-
-Route::get('/deleted-tasks', function () {
-    return view('tasks.index');
-});
+// TASK ROUTES
+Route::get('/my-tasks', [TaskController::class, 'index'])->name('my.tasks');
+Route::get('/create-task', [TaskController::class, 'create'])->name('create.task');

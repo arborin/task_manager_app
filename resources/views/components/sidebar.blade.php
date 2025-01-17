@@ -37,14 +37,14 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a href="/">
+                        <a href="{{ route('dashboard') }}">
                             <i class="la la-dashboard"></i>
                             <p>Dashboard</p>
                             <span class="badge badge-count">5</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/my-tasks">
+                        <a href="{{ route('my.tasks') }}">
                             <i class="la la-table"></i>
                             <p>My Tasks</p>
                             <span class="badge badge-count">14</span>
