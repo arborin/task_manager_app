@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TaskStoreRequest;
+use App\Models\Task;
 use App\Models\TaskStatus;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,14 @@ class TaskController extends Controller
      */
     public function store(TaskStoreRequest $request)
     {
-        dd($request);
+        Task::create([
+            'task_description' => $request->task_description,
+            'status_id' => $request->status_id,
+            'completion_date' => $request->date,
+            'user_id' => null
+        ]);
+
+        return redirect()->back()->with('success', 'Task Created!');
     }
 
     /**

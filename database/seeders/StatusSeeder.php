@@ -19,8 +19,6 @@ class StatusSeeder extends Seeder
         TaskStatus::truncate();
 
         foreach ($status as $status) {
-
-            print($status);
             TaskStatus::create([
                 'name' => $status
             ]);
