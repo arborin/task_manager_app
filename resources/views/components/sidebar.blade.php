@@ -36,7 +36,7 @@
                     </li>
                     <li class="nav-item {{ request()->is('tasks*') ? 'active' : '' }}">
                         <a href="{{ route('tasks.list') }}">
-                            <i class="la la-table"></i>
+                            <i class="la la-list-alt"></i>
                             <p>My Tasks</p>
                         </a>
                     </li>

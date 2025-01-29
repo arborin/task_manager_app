@@ -40,4 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/tasks-store', [TaskController::class, 'store'])->name('tasks.store');
     Route::get('/tasks-edit/{task}', [TaskController::class, 'edit'])->name('tasks.edit');
     Route::patch('/tasks-edit/{task}', [TaskController::class, 'update'])->name('tasks.update');
+
+    // LOGOUT
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

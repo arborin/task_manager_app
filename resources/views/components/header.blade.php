@@ -42,7 +42,14 @@
                                     </div>
                                 </li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                @if (Auth::check())
+                                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">
+                                            <i class="fa fa-power-off"></i> Logout
+                                        </button>
+                                    </form>
+                                @endif
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>

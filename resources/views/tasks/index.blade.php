@@ -21,8 +21,8 @@
                                     <th>Task</th>
                                     <th>Created Date</th>
                                     <th>Completion date</th>
-                                    <th>Status</th>
                                     <th>Remaining days</th>
+                                    <th>Status</th>
                                     <th>Alert</th>
                                     <th>Action</th>
                                 </tr>
@@ -37,8 +37,8 @@
                                         <td>{{ $task->task_description }}</td>
                                         <td>{{ $task->created_at->format('Y-m-d') }}</td>
                                         <td>{{ $task->completion_date }}</td>
-                                        <td>{{ optional($task->status)->name }}</td>
                                         <td>{{ $diff_days >= 0 ? $diff_days : 0 }}</td>
+                                        <td>{{ optional($task->status)->name }}</td>
                                         <td>
                                             @if ($task->status_id == 3)
                                                 <img src={{ asset('assets/img/done.png') }} alt='fire'

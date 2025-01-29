@@ -28,4 +28,12 @@ class LoginController extends Controller
             ->withErrors(['email' => 'The provided credentials is not correct.'])
             ->onlyInput('email');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route('login');
+    }
 }

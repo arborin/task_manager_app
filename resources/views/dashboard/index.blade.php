@@ -33,7 +33,7 @@
             <div class="card card-tasks">
                 <div class="card-header ">
                     <h4 class="card-title">Tasks</h4>
-                    <p class="card-category">To Do List</p>
+                    <p class="card-category">Last 5 tasks</p>
                 </div>
                 <div class="card-body ">
                     <div class="table-full-width">

@@ -10,7 +10,7 @@
                     <div class="card-title">Base Form Control</div>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{{ route('update.task', ['task' => $task->id]) }}">
+                    <form method="post" action="{{ route('tasks.update', ['task' => $task->id]) }}">
                         @csrf
                         @method('patch')
                         <div class="row">
