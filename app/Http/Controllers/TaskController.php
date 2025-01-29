@@ -46,7 +46,7 @@ class TaskController extends Controller
             'user_id' => 1
         ]);
 
-        return redirect()->route('my.tasks')->with('success', 'Task Created!');
+        return redirect()->route('tasks.list')->with('success', 'Task Created!');
     }
 
     /**
@@ -81,7 +81,7 @@ class TaskController extends Controller
 
         $task->update();
 
-        return redirect()->route('my.tasks')->with('success', 'Record updated!');
+        return redirect()->route('tasks.list')->with('success', 'Record updated!');
     }
 
     /**

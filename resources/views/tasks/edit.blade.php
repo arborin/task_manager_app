@@ -70,7 +70,7 @@
                 </div>
                 <div class="card-action">
                     <button type='submit' class="btn btn-success float-right ml-2">Submit</button>
-                    <a href="{{ route('my.tasks') }}" class="btn btn-danger float-right">Cancel</a>
+                    <a href="{{ route('tasks.list') }}" class="btn btn-danger float-right">Cancel</a>
                 </div>
                 </form>
             </div>

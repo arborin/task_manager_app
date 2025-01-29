@@ -10,7 +10,7 @@
                     <div class="card-title">Base Form Control</div>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{{ route('store.task') }}">
+                    <form method="post" action="{{ route('tasks.store') }}">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="card-action">
                     <button type='submit' class="btn btn-success float-right ml-2">Submit</button>
-                    <a href="{{ route('my.tasks') }}" class="btn btn-danger float-right">Cancel</a>
+                    <a href="{{ route('tasks.list') }}" class="btn btn-danger float-right">Cancel</a>
                 </div>
                 </form>
             </div>

@@ -76,7 +76,7 @@
                                         </td>
                                         <td class="td-actions">
                                             <div class="form-button-action">
-                                                <a href="{{ route('edit.task', ['task' => $task->id]) }}"
+                                                <a href="{{ route('tasks.edit', ['task' => $task->id]) }}"
                                                     data-toggle="tooltip" title="Edit Task"
                                                     class="btn btn-link <btn-simple-primary">
                                                     <i class="la la-edit"></i>
@@ -96,7 +96,8 @@
                 </div>
                 <div class="card-footer ">
                     <div class="stats">
-                        <i class="now-ui-icons loader_refresh spin"></i> <a href="{{ route('my.tasks') }}">Show all</a>
+                        <i class="now-ui-icons loader_refresh spin"></i> <a href="{{ route('tasks.list') }}">Show
+                            all</a>
                     </div>
                 </div>
             </div>

@@ -35,9 +35,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     // TASK ROUTES
-    Route::get('/my-tasks', [TaskController::class, 'index'])->name('my.tasks');
-    Route::get('/create-task', [TaskController::class, 'create'])->name('create.task');
-    Route::post('/store-task', [TaskController::class, 'store'])->name('store.task');
-    Route::get('/edit-task/{task}', [TaskController::class, 'edit'])->name('edit.task');
-    Route::patch('/update-task/{task}', [TaskController::class, 'update'])->name('update.task');
+    Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.list');
+    Route::get('/tasks-create', [TaskController::class, 'create'])->name('tasks.create');
+    Route::post('/tasks-store', [TaskController::class, 'store'])->name('tasks.store');
+    Route::get('/tasks-edit/{task}', [TaskController::class, 'edit'])->name('tasks.edit');
+    Route::patch('/tasks-edit/{task}', [TaskController::class, 'update'])->name('tasks.update');
 });

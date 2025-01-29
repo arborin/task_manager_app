@@ -28,25 +28,16 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
+                    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                         <a href="{{ route('dashboard') }}">
                             <i class="la la-dashboard"></i>
                             <p>Dashboard</p>
-                            <span class="badge badge-count">5</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('my.tasks') }}">
+                    <li class="nav-item {{ request()->is('tasks*') ? 'active' : '' }}">
+                        <a href="{{ route('tasks.list') }}">
                             <i class="la la-table"></i>
                             <p>My Tasks</p>
-                            <span class="badge badge-count">14</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/deleted-tasks">
-                            <i class="la la-keyboard-o"></i>
-                            <p>Archive</p>
-                            <span class="badge badge-count">50</span>
                         </a>
                     </li>
                 </ul>
