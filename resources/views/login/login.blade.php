@@ -23,7 +23,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-group form-floating-label">
+                        <div class="form-group form-floating-label mt-3">
                             <div class="form-action mb-3">
                                 <button type="submit" href="#" class="btn btn-primary btn-block btn-login">
                                     Sign In

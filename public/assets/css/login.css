@@ -14,3 +14,8 @@
     box-shadow: 0 0 12px rgba(160, 159, 159, .18);
     margin: 0 auto;
 }
+
+.form-group {
+    margin-bottom: 0;
+    padding: 0px 10px;
+}

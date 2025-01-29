@@ -18,20 +18,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// LOGIN
-Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/auth', [LoginController::class, 'auth'])->name('auth');
+Route::middleware('guest')->group(function () {
+    // LOGIN
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/auth', [LoginController::class, 'auth'])->name('auth');
 
-// REGISTER
-Route::get('/register', [RegisterController::class, 'register'])->name('register.form');
-Route::post('/register', [RegisterController::class, 'register_user'])->name('register.user');
+    // REGISTER
+    Route::get('/register', [RegisterController::class, 'register'])->name('register.form');
+    Route::post('/register', [RegisterController::class, 'register_user'])->name('register.user');
+});
 
-// DASHBOARD
-Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-// TASK ROUTES
-Route::get('/my-tasks', [TaskController::class, 'index'])->name('my.tasks');
-Route::get('/create-task', [TaskController::class, 'create'])->name('create.task');
-Route::post('/store-task', [TaskController::class, 'store'])->name('store.task');
-Route::get('/edit-task/{task}', [TaskController::class, 'edit'])->name('edit.task');
-Route::patch('/update-task/{task}', [TaskController::class, 'update'])->name('update.task');
+
+Route::group(['middleware' => 'auth'], function () {
+    // DASHBOARD
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    // TASK ROUTES
+    Route::get('/my-tasks', [TaskController::class, 'index'])->name('my.tasks');
+    Route::get('/create-task', [TaskController::class, 'create'])->name('create.task');
+    Route::post('/store-task', [TaskController::class, 'store'])->name('store.task');
+    Route::get('/edit-task/{task}', [TaskController::class, 'edit'])->name('edit.task');
+    Route::patch('/update-task/{task}', [TaskController::class, 'update'])->name('update.task');
+});
