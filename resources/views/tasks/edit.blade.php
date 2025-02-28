@@ -7,7 +7,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">Base Form Control</div>
+                    <div class="card-title">Edit task</div>
                 </div>
                 <div class="card-body">
                     <form method="post" action="{{ route('tasks.update', ['task' => $task->id]) }}">

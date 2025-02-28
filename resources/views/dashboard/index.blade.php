@@ -33,7 +33,7 @@
             <div class="card card-tasks">
                 <div class="card-header ">
                     <h4 class="card-title">Tasks</h4>
-                    <p class="card-category">Last 5 tasks</p>
+                    <p class="card-category">Active tasks</p>
                 </div>
                 <div class="card-body ">
                     <div class="table-full-width">
@@ -81,11 +81,6 @@
                                                     class="btn btn-link <btn-simple-primary">
                                                     <i class="la la-edit"></i>
                                                 </a>
-                                                <button type="button" title="Remove"
-                                                    class="btn btn-link btn-simple-danger" data-toggle="modal"
-                                                    data-target="#exampleModal">
-                                                    <i class="la la-times"></i>
-                                                </button>
                                             </div>
                                         </td>
                                     </tr>

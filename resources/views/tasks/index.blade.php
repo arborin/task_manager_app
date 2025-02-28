@@ -5,12 +5,56 @@
             <a href="{{ route('tasks.create') }}" class="btn btn-primary">Create</a>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form method="get" action="{{ route('tasks.list') }}">
+                <div class="card">
+                    <div class="row p-3">
+
+                        <div class="col-md-2">
+                            <input type="text" name='search' value="{{ request()->get('search') }}"
+                                class="form-control" id="search" placeholder="">
+                        </div>
+
+                        <div class="col-md-2">
+
+                            <select class="form-control" name="status" id="task-status">
+                                <option value=""></option>
+                                @foreach ($task_status as $status)
+                                    <option value={{ $status->id }}
+                                        {{ request()->get('status') == $status->id ? 'selected' : '' }}>
+                                        {{ $status->name }}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-success">Search</button>
+                            <a href="{{ route('tasks.list') }}"class="btn btn-secondary"><i
+                                    class="la la-refresh"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
     <div class="row">
         <div class="col-md-12">
             <div class="card card-tasks">
                 <div class="card-header ">
-                    <h4 class="card-title">Tasks</h4>
-                    <p class="card-category">To Do List</p>
+                    <h4 class="card-title">Tasks List</h4>
                 </div>
                 <div class="card-body ">
                     <div class="table-full-width">
@@ -58,11 +102,14 @@
                                                     class="btn btn-link <btn-simple-primary">
                                                     <i class="la la-edit"></i>
                                                 </a>
+
                                                 <button type="button" title="Remove"
-                                                    class="btn btn-link btn-simple-danger" data-toggle="modal"
-                                                    data-target="#exampleModal">
+                                                    onclick="handleClick({{ $task->id }})"
+                                                    class="btn btn-link btn-simple-danger delete-btn"
+                                                    data-toggle="modal" data-target="#exampleModal">
                                                     <i class="la la-times"></i>
                                                 </button>
+
                                             </div>
                                         </td>
                                     </tr>
@@ -74,9 +121,6 @@
                     </div>
                 </div>
                 <div class="card-footer ">
-                    {{-- <div class="stats">
-                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-                    </div> --}}
                     <div class="float-md-right">
                         {{ $tasks->links() }}
                     </div>
@@ -103,11 +147,22 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <form action={{ route('tasks.delete') }} method="post">
+                        @csrf
+                        @method('delete')
+                        <input type='hidden' name='task_id' id='delete-id' />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function handleClick(id) {
+            document.getElementById("delete-id").value = id;
+        }
+    </script>
 
 
 </x-layout>

@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        $tasks = Task::where('user_id', 1)->orderBy('id', 'desc')->limit(5)->get();
+        $tasks = Task::where('user_id', auth()->id())->orderBy('id', 'desc')->limit(5)->get();
 
 
         $task_counts = Task::select('status_id', \DB::raw('COUNT(*) as total'))

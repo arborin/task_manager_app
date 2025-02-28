@@ -2,10 +2,12 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ asset('assets/img/profile.jpg') }}">
+                        <img
+                            src="{{ auth()->user()->image ? asset('storage/profiles/' . auth()->user()->image) : asset('assets/img/profile.jpg') }}">
                     </div>
+
                     <div class="info">
-                        <a class="" data-toggle="collapse" href="{{ route('dashboard') }}" aria-expanded="true">
+                        <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
                                 {{ auth()->user()->name }}
                                 <span class="user-level">
@@ -19,10 +21,11 @@
                         <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
                             <ul class="nav">
                                 <li>
-                                    <a href="#edit">
-                                        <span class="link-collapse">Edit Profile</span>
+                                    <a href="{{ route('profile.edit') }}">
+                                        <span class="link-collapse">My Profile</span>
                                     </a>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
