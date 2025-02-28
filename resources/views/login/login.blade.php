@@ -30,7 +30,7 @@
                                 </button>
                             </div>
                             <div class="login-account">
-                                <span class="msg">Don't have an account yet ?</span>
+                                <span class="msg">Don't have an account yet?</span>
                                 <a href="{{ route('register.form') }}" id="show-signup" class="link">Sign Up</a>
                             </div>
                         </div>

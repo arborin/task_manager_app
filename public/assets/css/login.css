@@ -19,3 +19,11 @@
     margin-bottom: 0;
     padding: 0px 10px;
 }
+
+.form-group label {
+    margin-top: 10px;
+}
+
+.btn-login {
+    margin-top: 20px;
+}

@@ -43,7 +43,7 @@
                                     Account</button>
                             </div>
                             <div class="login-account">
-                                <span class="msg">Don't have an account ?</span>
+                                <span class="msg">Already have an account?</span>
                                 <a href="{{ route('login') }}" id="show-signup" class="link">Sign In</a>
                             </div>
                         </div>
